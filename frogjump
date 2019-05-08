@@ -1,0 +1,23 @@
+package solution
+
+// you can also use imports, for example:
+// import "fmt"
+// import "os"
+import "math"
+
+// you can write to stdout for debugging purposes, e.g.
+// fmt.Println("this is a debug message")
+
+func Solution(X int, Y int, D int) int {
+    // write your code in Go 1.4
+    var jump, difference int
+    difference = Y-X
+    if X!=Y {
+    jump= difference/D
+    if math.Remainder(float64(difference),float64(D))!=0 {
+        jump++
+    }
+    }
+    
+    return jump
+}
