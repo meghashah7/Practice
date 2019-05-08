@@ -1,0 +1,36 @@
+package main
+
+// you can also use imports, for example:
+import "fmt"
+
+// import "os"
+//import "strconv"
+
+// you can write to stdout for debugging purposes, e.g.
+// fmt.Println("this is a debug message")
+
+func main() {
+
+	var A []int
+	A = []int{1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5}
+	gap := Solution(A)
+	fmt.Println(gap)
+}
+
+func Solution(A []int) int {
+	// write your code in Go 1.4
+	var odd int
+
+	m := make(map[int]int)
+	for _, element := range A {
+		m[element]++
+		fmt.Println(element, m[element])
+
+	}
+	for i := range m {
+		if m[i] == 1 {
+			odd = i
+		}
+	}
+	return odd
+}
