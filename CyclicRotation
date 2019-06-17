@@ -14,8 +14,8 @@ func main() {
 	var A []int
 	A = []int{3, 8, 9, 7, 6}
 	K := 3
-	gap := Solution(A, K)
-	fmt.Println(gap)
+	rotatedArray := Solution(A, K)
+	fmt.Println(rotatedArray)
 }
 
 func Solution(A []int, K int) []int {
