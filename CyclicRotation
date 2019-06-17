@@ -10,7 +10,7 @@ import "fmt"
 // fmt.Println("this is a debug message")
 
 func main() {
-
+// The main routine here is to test the Solution
 	var A []int
 	A = []int{3, 8, 9, 7, 6}
 	K := 3
