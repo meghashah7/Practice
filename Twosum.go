@@ -1,5 +1,5 @@
 func twoSum(nums []int, target int) []int {
-    
+    //Below code is commented as it is has O(n^2) time complexity
   //  var retarray []int
     
   //  for i:=0;i< len(nums)-1 ; i++ {
