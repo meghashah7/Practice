@@ -5,58 +5,52 @@
  *     Next *ListNode
  * }
  */
-
-import "container/list"
-
-
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-    
-  
 
-    l3 :=list.New()
-    var carryover,number int
-    
-    for l:=l1;l!=nil; l=l.Next {
-        number =0
-        if l.Next == nil  && l2.Next!=nil {
-            number =  carryover+0 + l2.Val
-            
-        } else if l.Next !=nil && l2.Next == nil {
-            number = carryover+l1.Val + 0 
-         //else if l.Next == nil && l2.Next == nil {
-        //    return l3
-       // } 
-        } else {
-            number = carryover+ l.Val+l2.Val
-            if number >=10 {
-                carryover= number/10
-                number = number%10
-                fmt.Println("Carryover")
-                fmt.Println(carryover)
-             fmt.Println(number)
-                
-               
-            } else {
-                carryover =0
-            }
-            
-        }
-        
-        //newNode.Val = number
-        l3.PushBack(number)
-        
-        l2=l2.Next
-  //      l3 = l3.Next
-      
-    //    fmt.Println(l3)
-   //     fmt.Println("next")
-    }
-    
-    
-    fmt.Println(l3)
-    var Head *ListNode
-    Head.Val = int(l3.Front())
-    Head.Next = l3.Next()
-    return Head
+	head := &ListNode{0, nil}
+
+	var carryover, number int
+	l3 := head
+
+	for l, m := l1, l2; l != nil || m != nil; {
+		if l == nil && m != nil {
+			number = 0 + m.Val + carryover
+
+		} else if l != nil && m == nil {
+			number = l.Val + 0 + carryover
+		} else {
+			number = l.Val + m.Val + carryover
+		}
+
+		if number >= 10 {
+			carryover = number / 10
+			number = number % 10
+		} else {
+
+			carryover = 0
+		}
+		l3.Val = number
+
+		if m != nil {
+			m = m.Next
+		}
+		if l != nil {
+			l = l.Next
+		}
+		if l != nil || m != nil {
+			newNode := &ListNode{0, nil}
+			l3.Next = newNode
+			l3 = l3.Next
+		}
+
+	}
+	if carryover > 0 {
+		newNode := &ListNode{0, nil}
+		l3.Next = newNode
+		l3 = l3.Next
+		l3.Val = carryover
+	}
+
+	return head
+
 }
-
