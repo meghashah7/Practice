@@ -11,6 +11,8 @@ import (
 // you can write to stdout for debugging purposes, e.g.
 // fmt.Println("this is a debug message")
 
+//This is from codility training questions
+
 func main() {
 	ranks := []int{1, 0}
 	fmt.Println(Solution(ranks))
