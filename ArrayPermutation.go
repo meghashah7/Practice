@@ -7,7 +7,7 @@ import "sort"
 
 
 func main() {
-  
+  // This is to test the Solution function
   fmt.Println([]int{2,3,4,1,5,6})
   
 }
