@@ -17,6 +17,7 @@ func main() {
 
 func Solution(A []int) int {
     // write your code in Go 1.4
+  //sort internally is nlog(n) time complexity
     
     sort.Ints(A)
   //  fmt.Println(A)
